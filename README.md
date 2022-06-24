@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Triple-Fe-Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![완성예시](src/assets/images/triple-guide-section-1.gif)
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+## 개발환경
 
-### `npm start`
+| 종류 |      버전      |
+| :--: | :------------: |
+|  OS  | MacOS Monterey |
+| Node |    16.13.0     |
+| Npm  |     8.1.0      |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 프로젝트 실행
 
-### `npm test`
+1. Dependencies install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+$ npm install
+```
 
-### `npm run build`
+2. `.env` 셋업
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+DISABLE_ESLINT_PLUGIN=true
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. 실행
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+$ npm run start
+```
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 사용한 기술과 선택한 이유
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- CRA : 초기세팅
+- Styled-components :
+- eslint & prettier
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 구현 애니메이션
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 영역별 등장 애니메이션
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 좌측 이미지, 지표 문구, 수상 내역 순으로 표시해야 합니다.
+- 살짝 위로 떠오르는 듯한 애니메이션과 투명도를 조절하는 애니메이션을
+  적용해야 합니다.
+- 등장 애니메이션의 duration은 700ms이고, 애니메이션 사이 간격은
+  100ms입니다.
 
-### Code Splitting
+### 숫자가 올라가는 애니메이션
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 각 숫자는 0부터 시작합니다.
+- 세 숫자 모두 2초 동안 증가하고, 동시에 끝나야 합니다.
+- 증가 속도가 느려지는 효과를 구현해야 합니다.
+- React와 DOM API만을 이용해 구현해야 합니다.
