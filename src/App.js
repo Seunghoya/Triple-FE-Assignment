@@ -1,11 +1,8 @@
 import './App.css'
+import { Main } from './pages/section/section'
 
 const App = () => {
-  return (
-    <>
-      <div>Hello World!</div>
-    </>
-  )
+  return <Main />
 }
 
 export default App
