@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const useFadeIn = (duration, delay) => {
   const domRef = useRef()
@@ -7,7 +7,7 @@ const useFadeIn = (duration, delay) => {
     const { current } = domRef
 
     if (current) {
-      current.style.transition = `opacity ${duration}s ease-in-out ${delay}s`
+      current.style.transition = `${duration}s ease-in-out ${delay}s`
       current.style.opacity = 1
       current.style.transform = 'translate3d(0, 0, 0)'
     }

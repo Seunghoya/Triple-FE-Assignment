@@ -1,20 +1,21 @@
 import styled from 'styled-components'
+import useCountUp from '../../hooks/useCountUp'
 
-export const MtricItems = ({ count, unit, script }) => {
+export const MetricItems = ({ count, unit, script }) => {
+  const countUp = useCountUp(count, 0, 2000)
+
   return (
-    <MtricItemsContainer>
+    <MetricItemsContainer>
       <p>
-        <strong>
-          {count}
-          {unit}
-        </strong>
+        <strong {...countUp}>{count}</strong>
+        <strong>{unit}</strong>
       </p>
       <p>{script}</p>
-    </MtricItemsContainer>
+    </MetricItemsContainer>
   )
 }
 
-const MtricItemsContainer = styled.div`
+const MetricItemsContainer = styled.div`
   display: flex;
   & p {
     font-size: 36px;
