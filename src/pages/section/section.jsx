@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { useEffect } from 'react'
 import { Awards } from '../../components/awards/index'
-import { MtricItem } from '../../components/metricItem/index'
+import { MetricItem } from '../../components/metricItem/index'
 import { ContentLogo } from '../../components/contentLogo/index'
 
 export const Main = () => {
@@ -10,7 +11,7 @@ export const Main = () => {
         <ContentLogo />
       </LeftSection>
       <RightSection>
-        <MtricItem />
+        <MetricItem />
         <Awards />
       </RightSection>
     </MainContainer>
@@ -20,13 +21,13 @@ export const Main = () => {
 const MainContainer = styled.div`
   display: flex;
   top: auto;
-  padding: 100px;
+  margin: 100px;
 `
 
 const LeftSection = styled.div`
-  padding: 0 80px 0 0;
+  margin: 0 80px 0 0;
 `
 
 const RightSection = styled.div`
-  padding: 40px 0 0 80px;
+  margin: 20px 0 0 80px;
 `

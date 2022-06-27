@@ -2,10 +2,13 @@ import { Award } from './item'
 import styled from 'styled-components'
 import google from '../../assets/images/play-store2x.png'
 import apple from '../../assets/images/badge-apple4x.png'
+import useFadeIn from '../../hooks/useFadeIn'
 
 export const Awards = () => {
+  const fadeIn = useFadeIn(0.7, 0.5)
+
   return (
-    <AwardContainer>
+    <AwardContainer {...fadeIn}>
       <Award
         img={google}
         script1={'2018 구글 플레이스토어'}
@@ -22,5 +25,5 @@ export const Awards = () => {
 
 const AwardContainer = styled.div`
   display: flex;
-  padding-bottom: 140px;
+  margin-top: 30px;
 `
