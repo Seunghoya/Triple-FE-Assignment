@@ -1,26 +1,30 @@
 import { useEffect, useRef } from 'react'
+import easeOutExpo from '../utils/easeOutExpo'
 
 const useCountUp = (end, start = 0, duration = 2000) => {
   const domRef = useRef()
-  const stepTime = Math.floor(duration / (end - end * 0.8))
-
-  // 숫자 증가 속도가 점점 감소하는 애니메이션 구현
+  const frameRate = 1000 / 60
+  const totalFrame = Math.round(duration / frameRate)
 
   useEffect(() => {
     const { current } = domRef
+    let startTime = new Date().getTime()
 
     if (current) {
-      let currentNum = end * 0.8
+      let currentNum = start
       const counter = setInterval(() => {
         currentNum += 1
-        current.innerHTML = currentNum
-        if (currentNum >= end) {
-          clearInterval(counter)
-        }
-      }, stepTime)
-    }
-  }, [end, start])
+        const progress = easeOutExpo(currentNum / totalFrame)
+        current.innerHTML = Math.round(end * progress)
 
+        if (progress === 1) {
+          clearInterval(counter)
+          let endTime = new Date().getTime()
+          console.log(`${end} 실행시간: ${endTime - startTime}ms`)
+        }
+      }, frameRate)
+    }
+  }, [end, start, totalFrame])
   return {
     ref: domRef,
   }
