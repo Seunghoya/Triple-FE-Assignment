@@ -8,7 +8,6 @@ const useCountUp = (end, start = 0, duration = 2000) => {
 
   useEffect(() => {
     const { current } = domRef
-    let startTime = new Date().getTime()
 
     if (current) {
       let currentNum = start
@@ -19,8 +18,6 @@ const useCountUp = (end, start = 0, duration = 2000) => {
 
         if (progress === 1) {
           clearInterval(counter)
-          let endTime = new Date().getTime()
-          console.log(`${end} 실행시간: ${endTime - startTime}ms`)
         }
       }, frameRate)
     }
